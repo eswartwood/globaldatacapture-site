@@ -91,12 +91,31 @@ a {
   display: block;
 }
 
+/* default (desktop / tablet) tagline */
 .gdc-tagline {
   text-align: center;
   font-size: 22px;
   color: #4b5563; /* gray-600 */
   margin-bottom: 28px;
 }
+
+/* --- Mobile-only tweaks: logo > tagline --- */
+@media (max-width: 768px) {
+  .gdc-hero {
+    margin-bottom: 20px;
+  }
+
+  .gdc-logo-main {
+    transform: scale(1.18);        /* make logo ~18% bigger */
+    transform-origin: left center;  /* grow it from the left, not out of center */
+  }
+
+  .gdc-tagline {
+    font-size: 19px;   /* slightly smaller line so logo feels dominant */
+    line-height: 1.3;
+  }
+}
+
 
 /* Mobile tweaks: logo > tagline hierarchy */
 @media (max-width: 768px) {
