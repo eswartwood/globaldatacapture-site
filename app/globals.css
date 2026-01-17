@@ -16,14 +16,16 @@ body {
 
 body {
   min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   background: #f3f4f6; /* gray-100 */
   color: #111827; /* gray-900 */
 }
 
-/* Remove default link styles globally – we'll style specific links */
+/* Remove default link styles globally – we’ll style specific links */
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 /* ===== Page frame ===== */
@@ -33,33 +35,38 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 48px 24px;
 }
 
-/* Main card / window */
+/* Card / window */
 .gdc-window {
-  background: #f9fafb; /* gray-50 */
-  border-radius: 28px;
-  border: 1px solid #e5e7eb; /* gray-200 */
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16); /* slate-900-ish */
-  max-width: 960px;
   width: 100%;
-  padding: 40px 60px;
+  max-width: 960px;
+  background: #f9fafb; /* gray-50 */
+  border-radius: 32px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+  padding: 32px 56px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== Top nav (Home / Legal) ===== */
+/* Top row (nav only now) */
+.gdc-window-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
 
+/* Nav (right) */
 .gdc-nav {
   display: flex;
-  justify-content: flex-end;
-  gap: 24px;
+  gap: 28px;
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 32px;
 }
 
 .gdc-nav-link {
-  text-decoration: none;
   color: #6b7280; /* gray-500 */
   transition: color 0.2s ease;
 }
@@ -74,80 +81,102 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .gdc-logo-main {
-  width: 600px; /* the wide logo with text */
+  width: 320px; /* desktop base size */
   max-width: 100%;
   height: auto;
   display: block;
-  transform: scale(1.25); /* bump size without changing card width */
-  transform-origin: center;
 }
 
-/* Tagline beneath logo */
 .gdc-tagline {
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   color: #4b5563; /* gray-600 */
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
-/* Divider above contact block */
+/* Divider */
+
 .gdc-divider {
-  border: 0;
+  border: none;
   border-top: 1px solid #e5e7eb; /* gray-200 */
-  margin: 32px 0 24px;
+  margin: 0 0 24px;
 }
 
-/* ===== Contact block ===== */
+/* ===== CONTACT BLOCK ===== */
 
 .gdc-contact {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .gdc-contact p {
-  margin: 0;
+  margin: 0 0 6px;
 }
 
-.gdc-contact p + p {
-  margin-top: 4px;
-}
-
-/* Email / phone links in contact + anywhere else */
+/* Specific link styling (email, phone) */
 .gdc-link {
-  text-decoration: none;
-  color: #111827; /* gray-900 */
-  transition: color 0.2s ease;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  color: #2563eb; /* blue-600 */
 }
 
 .gdc-link:hover {
-  color: #6b7280; /* gray-500 */
+  color: #1d4ed8; /* blue-700 */
 }
 
-/* ===== Responsive tweaks ===== */
+/* ===== Responsive: mobile & small tablet ===== */
 
 @media (max-width: 768px) {
+  .gdc-page {
+    padding: 32px 16px;
+  }
+
   .gdc-window {
-    padding: 28px 20px;
-    border-radius: 20px;
+    padding: 24px 20px 28px;
+    border-radius: 24px;
+  }
+
+  .gdc-window-top {
+    margin-bottom: 20px;
   }
 
   .gdc-nav {
-    justify-content: flex-end;
-    margin-bottom: 24px;
-    font-size: 13px;
+    gap: 20px;
+    font-size: 15px;
   }
 
+  /* Balanced 1.5x-ish visual weight for logo on mobile */
   .gdc-logo-main {
-    width: 100%;
-    transform: scale(1.0); /* let it breathe on small screens */
+    width: 360px;
+    max-width: 85%;
   }
 
   .gdc-tagline {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 24px;
+  }
+
+  .gdc-contact {
+    font-size: 14px;
+  }
+}
+
+/* Extra-small devices (very narrow phones) */
+@media (max-width: 420px) {
+  .gdc-page {
+    padding: 24px 12px;
+  }
+
+  .gdc-window {
+    padding: 20px 16px 24px;
+  }
+
+  .gdc-logo-main {
+    max-width: 90%;
   }
 }

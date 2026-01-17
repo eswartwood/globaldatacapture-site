@@ -6,16 +6,18 @@ export default function Page() {
     <main className="gdc-page">
       <section className="gdc-window">
         {/* Top nav */}
-        <nav className="gdc-nav">
-          <Link href="/" className="gdc-nav-link">
-            Home
-          </Link>
-          <Link href="/legal" className="gdc-nav-link">
-            Legal
-          </Link>
-        </nav>
+        <div className="gdc-window-top">
+          <nav className="gdc-nav">
+            <Link href="/" className="gdc-nav-link">
+              Home
+            </Link>
+            <Link href="/legal" className="gdc-nav-link">
+              Legal
+            </Link>
+          </nav>
+        </div>
 
-        {/* HERO: logo + tagline */}
+        {/* HERO */}
         <div className="gdc-hero">
           <img
             src="/gdc/gdc-logo-primary.png"
@@ -50,3 +52,4 @@ export default function Page() {
     </main>
   );
 }
+
