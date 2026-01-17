@@ -1,73 +1,61 @@
-/* ============================== */
-/* GLOBAL RESET + BASE TYPOGRAPHY */
-/* ============================== */
+/* app/globals.css */
 
-* {
-  margin: 0;
-  padding: 0;
+/* ===== Base reset ===== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #f3f4f6; /* light gray */
-  color: #111827;       /* dark neutral */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f6; /* gray-100 */
+  color: #111827; /* gray-900 */
 }
 
-/* global link style */
+/* Remove default link styles globally – we'll style specific links */
 a {
   color: inherit;
 }
 
-/* ============================== */
-/* PAGE LAYOUT                    */
-/* ============================== */
+/* ===== Page frame ===== */
 
 .gdc-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 16px;
+  padding: 32px;
 }
 
-/* main white card / window */
+/* Main card / window */
 .gdc-window {
-  background: #ffffff;
-  border-radius: 18px;
-  width: 100%;
+  background: #f9fafb; /* gray-50 */
+  border-radius: 28px;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16); /* slate-900-ish */
   max-width: 960px;
-  padding: 28px 42px 42px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  width: 100%;
+  padding: 40px 60px;
 }
 
-/* ============================== */
-/* TOP CHROME + NAV               */
-/* ============================== */
-
-.gdc-window-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
-}
-
-
-/* nav (right) */
+/* ===== Top nav (Home / Legal) ===== */
 
 .gdc-nav {
   display: flex;
-  gap: 28px;
+  justify-content: flex-end;
+  gap: 24px;
   font-size: 14px;
   font-weight: 500;
+  margin-bottom: 32px;
 }
 
 .gdc-nav-link {
@@ -80,64 +68,86 @@ a {
   color: #111827; /* gray-900 */
 }
 
-/* ============================== */
-/* HERO: LEGAL LOGO + TAGLINE     */
-/* ============================== */
+/* ===== HERO: logo + tagline ===== */
 
 .gdc-hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .gdc-logo-main {
-  width: 600px; /* adjust if you want the logo bigger/smaller */
+  width: 600px; /* the wide logo with text */
+  max-width: 100%;
   height: auto;
   display: block;
-  transform: scale(1.25);
-  transform-origin: center center;
+  transform: scale(1.25); /* bump size without changing card width */
+  transform-origin: center;
 }
 
+/* Tagline beneath logo */
 .gdc-tagline {
   text-align: center;
   font-size: 24px;
   color: #4b5563; /* gray-600 */
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
-/* ============================== */
-/* DIVIDER + CONTACT BLOCK        */
-/* ============================== */
-
+/* Divider above contact block */
 .gdc-divider {
-  border: none;
+  border: 0;
   border-top: 1px solid #e5e7eb; /* gray-200 */
-  margin: 24px 0;
+  margin: 32px 0 24px;
 }
+
+/* ===== Contact block ===== */
 
 .gdc-contact {
-  font-size: 16px;
-  line-height: 1.7;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-/* ============================== */
-/* RESPONSIVE                     */
-/* ============================== */
+.gdc-contact p {
+  margin: 0;
+}
 
-@media (max-width: 640px) {
+.gdc-contact p + p {
+  margin-top: 4px;
+}
+
+/* Email / phone links in contact + anywhere else */
+.gdc-link {
+  text-decoration: none;
+  color: #111827; /* gray-900 */
+  transition: color 0.2s ease;
+}
+
+.gdc-link:hover {
+  color: #6b7280; /* gray-500 */
+}
+
+/* ===== Responsive tweaks ===== */
+
+@media (max-width: 768px) {
   .gdc-window {
-    padding: 24px 24px 32px;
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .gdc-nav {
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    font-size: 13px;
   }
 
   .gdc-logo-main {
-    width: 220px;
+    width: 100%;
+    transform: scale(1.0); /* let it breathe on small screens */
   }
 
   .gdc-tagline {
-    font-size: 15px;
+    font-size: 18px;
+    margin-bottom: 24px;
   }
 }
