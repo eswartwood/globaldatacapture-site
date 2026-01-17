@@ -1,69 +1,61 @@
 /* app/globals.css */
 
-/* ===== Base reset ===== */
+/* ===== GLOBAL RESET ===== */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   padding: 0;
   margin: 0;
 }
 
 body {
   min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #f3f4f6; /* gray-100 */
-  color: #111827; /* gray-900 */
+  color: #111827;     /* gray-900 */
 }
 
-/* Remove default link styles globally – we’ll style specific links */
+/* Remove default link styles globally */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ===== Page frame ===== */
+/* ===== PAGE FRAME ===== */
 
 .gdc-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 24px;
+  padding: 48px 16px;
 }
 
-/* Card / window */
+/* ===== CARD / WINDOW ===== */
+
 .gdc-window {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 48px 64px;
   width: 100%;
-  max-width: 960px;
-  background: #f9fafb; /* gray-50 */
-  border-radius: 32px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
-  padding: 32px 56px 40px;
-  display: flex;
-  flex-direction: column;
+  max-width: 880px;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* Top row (nav only now) */
-.gdc-window-top {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 24px;
-}
+/* ===== NAVIGATION ===== */
 
-/* Nav (right) */
 .gdc-nav {
   display: flex;
-  gap: 28px;
-  font-size: 14px;
-  font-weight: 500;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  font-size: 18px;
+  margin-bottom: 24px;
 }
 
 .gdc-nav-link {
@@ -75,154 +67,77 @@ a {
   color: #111827; /* gray-900 */
 }
 
-/* ===== HERO: logo + tagline ===== */
+/* ===== HERO ===== */
 
 .gdc-hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .gdc-logo-main {
-  width: 320px; /* desktop base size */
+  width: 320px;   /* desktop baseline */
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* default (desktop / tablet) tagline */
+/* Tagline / Service Line */
 .gdc-tagline {
   text-align: center;
   font-size: 22px;
-  color: #4b5563; /* gray-600 */
-  margin-bottom: 28px;
+  font-weight: 500;
+  color: #4b5563;  /* gray-600 */
+  margin-bottom: 32px;
 }
-
-/* --- Mobile-only tweaks: logo > tagline --- */
-@media (max-width: 768px) {
-  .gdc-hero {
-    margin-bottom: 20px;
-  }
-
-  .gdc-logo-main {
-    transform: scale(1.18);        /* make logo ~18% bigger */
-    transform-origin: left center;  /* grow it from the left, not out of center */
-  }
-
-  .gdc-tagline {
-    font-size: 19px;   /* slightly smaller line so logo feels dominant */
-    line-height: 1.3;
-  }
-}
-
-
-/* Mobile tweaks: logo > tagline hierarchy */
-@media (max-width: 768px) {
-  .gdc-logo-main {
-    width: 380px;
-    max-width: 92%;
-    margin-bottom: 10px;
-  }
-
-  .gdc-tagline {
-    font-size: 18px;
-    line-height: 1.3;
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .gdc-logo-main {
-    width: 340px;
-    max-width: 96%;
-  }
-
-  .gdc-tagline {
-    font-size: 16px;
-  }
-}
-
 
 /* Divider */
-
 .gdc-divider {
   border: none;
   border-top: 1px solid #e5e7eb; /* gray-200 */
-  margin: 0 0 24px;
+  margin: 24px 0 32px;
 }
 
 /* ===== CONTACT BLOCK ===== */
 
 .gdc-contact {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #1f2937; /* gray-800 */
 }
 
-.gdc-contact p {
-  margin: 0 0 6px;
-}
-
-/* Specific link styling (email, phone) */
-.gdc-link {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+/* For anchors inside contact */
+.gdc-contact a {
   color: #2563eb; /* blue-600 */
+  text-decoration: underline;
 }
 
-.gdc-link:hover {
-  color: #1d4ed8; /* blue-700 */
-}
-
-/* ===== Responsive: mobile & small tablet ===== */
+/* ===== MOBILE RESPONSIVE ===== */
 
 @media (max-width: 768px) {
-  .gdc-page {
-    padding: 32px 16px;
-  }
-
   .gdc-window {
-    padding: 24px 20px 28px;
-    border-radius: 24px;
-  }
-
-  .gdc-window-top {
-    margin-bottom: 20px;
+    padding: 32px 20px 28px;
   }
 
   .gdc-nav {
-    gap: 20px;
-    font-size: 15px;
+    gap: 24px;
+    font-size: 16px;
   }
 
-  /* Logo should dominate on mobile */
+  /* Logo dominance on mobile */
   .gdc-logo-main {
-    width: 380px;      /* a bit larger */
-    max-width: 82%;    /* still with breathing room */
+    transform: scale(1.22);
+    transform-origin: center top;
   }
 
   .gdc-tagline {
-    font-size: 18px;   /* slightly smaller for balance */
-    margin-bottom: 22px;
+    font-size: 18px;
+    margin-bottom: 24px;
   }
 
   .gdc-contact {
-    font-size: 14px;
-  }
-}
-
-/* Extra-small devices (very narrow phones) */
-@media (max-width: 420px) {
-  .gdc-page {
-    padding: 24px 12px;
-  }
-
-  .gdc-window {
-    padding: 20px 16px 24px;
-  }
-
-  .gdc-logo-main {
-    max-width: 86%;
+    font-size: 16px;
+    line-height: 1.45;
   }
 }
