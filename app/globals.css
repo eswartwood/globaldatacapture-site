@@ -1,12 +1,14 @@
 /* app/globals.css */
 
-/* ===== GLOBAL RESET ===== */
-
-*, *::before, *::after {
+/* ========== Base reset ========== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
@@ -15,47 +17,48 @@ body {
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #f3f4f6; /* gray-100 */
-  color: #111827;     /* gray-900 */
+  color: #111827;      /* gray-900 */
 }
 
-/* Remove default link styles globally */
+/* We’ll style specific links ourselves */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ===== PAGE FRAME ===== */
+/* ========== Page frame ========== */
 
 .gdc-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 16px;
+  padding: 24px;
 }
 
-/* ===== CARD / WINDOW ===== */
-
+/* Card window */
 .gdc-window {
-  background: #ffffff;
-  border-radius: 28px;
-  padding: 48px 64px;
+  position: relative;
   width: 100%;
-  max-width: 880px;
+  max-width: 960px;
+  background: #f9fafb; /* slightly warmer than body */
+  border-radius: 32px;
   box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 24px 60px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(148, 163, 184, 0.3);
+  padding: 48px 72px 40px;
 }
 
-/* ===== NAVIGATION ===== */
+/* ========== Nav (top right) ========== */
 
 .gdc-nav {
+  position: absolute;
+  top: 32px;
+  right: 48px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 32px;
-  font-size: 18px;
-  margin-bottom: 24px;
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .gdc-nav-link {
@@ -63,81 +66,117 @@ a {
   transition: color 0.2s ease;
 }
 
-.gdc-nav-link:hover {
+.gdc-nav-link:hover,
+.gdc-nav-link:focus-visible {
   color: #111827; /* gray-900 */
 }
 
-/* ===== HERO ===== */
+/* ========== HERO: logo + service line ========== */
 
 .gdc-hero {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
+  gap: 28px;
+  margin-top: 24px;
+  margin-bottom: 32px;
 }
 
+/* Desktop baseline logo size */
 .gdc-logo-main {
-  width: 320px;   /* desktop baseline */
+  width: 420px;     /* strong presence on desktop */
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Tagline / Service Line */
+/* Service line */
 .gdc-tagline {
   text-align: center;
   font-size: 22px;
   font-weight: 500;
-  color: #4b5563;  /* gray-600 */
-  margin-bottom: 32px;
+  color: #4b5563; /* gray-600 */
 }
 
-/* Divider */
+/* ========== Divider ========== */
+
 .gdc-divider {
   border: none;
-  border-top: 1px solid #e5e7eb; /* gray-200 */
-  margin: 24px 0 32px;
+  border-top: 1px solid #e5e7eb;
+  margin: 24px 0;
 }
 
-/* ===== CONTACT BLOCK ===== */
+/* ========== Contact block ========== */
 
 .gdc-contact {
-  font-size: 18px;
-  line-height: 1.55;
-  color: #1f2937; /* gray-800 */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111827;
 }
 
-/* For anchors inside contact */
-.gdc-contact a {
+.gdc-contact p {
+  margin: 0 0 8px;
+}
+
+.gdc-contact p:last-child {
+  margin-bottom: 0;
+}
+
+/* Blue, underlined links for email + phone */
+.gdc-link {
   color: #2563eb; /* blue-600 */
   text-decoration: underline;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+.gdc-link:hover,
+.gdc-link:focus-visible {
+  text-decoration: none;
+}
 
+/* ========== Responsive ========== */
+
+/* Mobile / small tablet */
 @media (max-width: 768px) {
+  .gdc-page {
+    padding: 16px;
+  }
+
   .gdc-window {
     padding: 32px 20px 28px;
+    border-radius: 24px;
   }
 
   .gdc-nav {
-    gap: 24px;
-    font-size: 16px;
+    top: 24px;
+    right: 24px;
+    gap: 20px;
+    font-size: 18px;
   }
 
-  /* Logo dominance on mobile */
+  .gdc-hero {
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
   .gdc-logo-main {
-    transform: scale(1.22);
-    transform-origin: center top;
+    width: 280px; /* bigger relative to the card on mobile */
   }
 
   .gdc-tagline {
-    font-size: 18px;
-    margin-bottom: 24px;
+    font-size: 20px;
+    text-align: left;
   }
 
   .gdc-contact {
     font-size: 16px;
-    line-height: 1.45;
+  }
+}
+
+/* Very wide desktop – give logo a bit more authority */
+@media (min-width: 1440px) {
+  .gdc-logo-main {
+    width: 460px;
   }
 }
