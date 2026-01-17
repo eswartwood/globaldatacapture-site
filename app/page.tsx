@@ -6,14 +6,7 @@ export default function Page() {
     <main className="gdc-page">
       <section className="gdc-window">
 
-        {/* Fake browser chrome + nav */}
-        <div className="gdc-window-top">
-          <div className="gdc-window-dots">
-            <span className="gdc-dot gdc-dot-red" />
-            <span className="gdc-dot gdc-dot-amber" />
-            <span className="gdc-dot gdc-dot-green" />
-          </div>
-
+      
           <nav className="gdc-nav">
             <Link href="/" className="gdc-nav-link">Home</Link>
             <Link href="/legal" className="gdc-nav-link">Legal</Link>
