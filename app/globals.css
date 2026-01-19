@@ -49,7 +49,7 @@ a {
 .gdc-header {
   position: relative;
   height: 88px;                  /* a bit more room for the logo */
-  padding: 16px 56px 8px;        /* pulls nav in from the edges */
+  padding: 12px 56px 8px;        /* pulls nav in from the edges */
   display: flex;
   align-items: center;
   justify-content: flex-end;     /* nav on the right */
@@ -62,7 +62,7 @@ a {
 /* Big logo, absolutely positioned, overlaps hero slightly (desktop) */
 .gdc-nav-brand {
   position: absolute;
-  top: 8px;
+  top: 6px;
   left: 0;                       /* sits against the header's left padding */
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@ a {
 
 /* Main header logo size */
 .gdc-nav-logo {
-  width: 320px;
+  width: 360px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -287,29 +287,29 @@ a {
   /* Header cleanup */
   .gdc-header {
     height: auto;
-    padding: 6px 12px 4px;
+    padding: 4px 12px 0;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     row-gap: 2px;
   }
 
-  /* On mobile, let logo sit above nav and center it */
+  /* On mobile, logo above nav and centered */
   .gdc-nav-brand {
     position: static;
-    margin-bottom: 4px;
+    margin-bottom: -4px;
     display: flex;
     justify-content: center;
   }
 
-  /* Logo scale boost on mobile */
+  /* Logo scale on mobile */
   .gdc-nav-logo {
-    width: 260px;
+    width: 300px;   /* smaller than desktop so it doesn’t dominate */
     height: auto;
     margin-bottom: 2px;
   }
 
-  /* Reduce nav gap so logo and nav feel glued */
+  /* Nav: keep tight to logo */
   .gdc-nav-links {
     gap: 12px;
     font-size: 14px;
