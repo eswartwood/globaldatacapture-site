@@ -386,6 +386,8 @@ a {
     gap: 22px;
     font-size: 16px;
     margin-bottom: 18px;
+    position: relative;
+    z-index: 50;
   }
 
   /* bump hero down to avoid overlap */
@@ -394,35 +396,9 @@ a {
     padding-top: 12px;
   }
 
-  /* CONTACT CARD stacked logo center fix */
-  .gdc-contact-card img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (max-width: 768px) {
-
-  /* top → logo */
+  
   .gdc-nav-brand {
-    margin-top: -75px;   /* was 16px — tighter */
-    margin-bottom: -75px;
-  }
-
-  /* logo size (your chosen knob) */
-  .gdc-nav-logo {
-    width: 400px;
-    height: auto;
-  }
-
-  /* logo → nav */
-  .gdc-nav-links {
-    margin-top: 2px;   /* was 8–12px territory */
-    margin-bottom: 10px;
-  }
-
-  /* nav → hero */
-  .gdc-hero {
-    padding-top: 18px;   /* bump hero down slightly */
+    position: relative;
+    z-index: 10;
   }
 }
