@@ -5,7 +5,7 @@ export default function Page() {
           HEADER / NAV
           =============================== */}
       <header className="gdc-header">
-        {/* Big transparent LLC logo, floating over hero */}
+        {/* Big transparent LLC logo */}
         <a href="/" className="gdc-nav-brand">
           <img
             src="/gdc/gdc-logo-gold-llc.png"
@@ -24,7 +24,6 @@ export default function Page() {
           HERO CONTENT
           =============================== */}
       <section className="gdc-hero">
-        {/* Left side: copy + feature cards */}
         <div className="gdc-hero-body">
           {/* Tag row */}
           <div className="gdc-hero-tags">
@@ -40,14 +39,15 @@ export default function Page() {
               <br />
               data, assets, and workflows.
             </h1>
-            <p className="gdc-hero-desc">
-              Global Data Capture, LLC is a systems engineering firm specializing in
-              identity-driven data workflows, secure digital asset packaging, and
-              enterprise-grade software integrations. We design and deploy smart file
-              formats, registration systems, and security-driven data tools used
-              across commercial, industrial, and media environments.
-            </p>
           </div>
+
+          <p className="gdc-hero-desc">
+            Global Data Capture, LLC is a systems engineering firm specializing
+            in identity-driven data workflows, secure digital asset packaging,
+            and enterprise-grade software integrations. We design and deploy
+            smart file formats, registration systems, and security-driven data
+            tools used across commercial, industrial, and media environments.
+          </p>
 
           {/* Feature row */}
           <div className="gdc-feature-row">
@@ -62,8 +62,8 @@ export default function Page() {
             <div className="gdc-feature-card">
               <h5>Registration &amp; Identity</h5>
               <p>
-                Tools that tie real-world entities to digital assets with verifiable,
-                auditable records.
+                Tools that tie real-world entities to digital assets with
+                verifiable, auditable records.
               </p>
             </div>
 
@@ -77,7 +77,9 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Right side: contact card */}
+        {/* ===============================
+            CONTACT CARD
+            =============================== */}
         <aside className="gdc-contact-card">
           <img
             src="/gdc/gdc-logo-gold-stacked-avatar.png"
@@ -87,18 +89,25 @@ export default function Page() {
 
           <div className="gdc-contact-block">
             <h6>Contact</h6>
+
             <p>Global Data Capture, LLC</p>
-            <p>521 Fifth Avenue, 17th Floor</p>
-            <p>New York, NY 10175-0038</p>
+            <p>
+              521 Fifth Avenue, 17th Floor
+              <br />
+              New York, NY 10175-0038
+            </p>
 
             <p>
               <a href="mailto:support@globaldatacapture.com">
                 support@globaldatacapture.com
               </a>
+              <br />
+              (888) 501-4099
             </p>
-            <p>(888) 501-4099</p>
 
-            <p>Industry classification: Computer &amp; Network Security.</p>
+            <p className="gdc-contact-foot">
+              Industry classification: Computer &amp; Network Security.
+            </p>
           </div>
         </aside>
       </section>

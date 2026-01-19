@@ -48,47 +48,47 @@ a {
 
 .gdc-header {
   position: relative;
-  height: 88px;                  /* a bit more room for the logo */
-  padding: 12px 56px 8px;        /* pulls nav in from the edges */
+  height: 92px;
+  padding: 18px 64px 6px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;     /* nav on the right */
+  justify-content: flex-end; /* nav on the right */
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Big logo, absolutely positioned, overlaps hero slightly (desktop) */
+/* Big transparent LLC logo – anchored left */
 .gdc-nav-brand {
   position: absolute;
-  top: 6px;
-  left: 0;                       /* sits against the header's left padding */
+  top: 4px;
+  left: 32px;
   display: flex;
   align-items: center;
   z-index: 50;
 }
 
-/* Main header logo size */
+/* Main header logo size (DESKTOP KNOB) */
 .gdc-nav-logo {
-  width: 360px;
+  width: 380px;
   height: auto;
   display: block;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
-  filter: brightness(1.12) saturate(1.14)
-    drop-shadow(0 0 20px rgba(240, 201, 106, 0.3));
+  filter: brightness(1.12) saturate(1.14);
 }
 
 /* Nav links on the right */
 .gdc-nav-links {
   display: flex;
-  gap: 28px;
+  gap: 32px;
+  padding-right: 16px;
 }
 
 .gdc-nav-links a {
   position: relative;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.74);
   padding: 4px 0;
   letter-spacing: 0.08em;
 }
@@ -101,7 +101,7 @@ a {
   width: 0;
   height: 1px;
   background: #f0c96a; /* gold underline */
-  transition: width 0.2s ease-out;
+  transition: width 0.25s ease;
 }
 
 .gdc-nav-links a:hover::after {
@@ -115,7 +115,7 @@ a {
 .gdc-hero {
   display: flex;
   gap: 48px;
-  margin-top: -8px; /* pull hero up under the logo */
+  margin-top: -6px; /* pull hero up under logo on desktop */
   border: 1px solid rgba(140, 140, 155, 0.6);
   padding: 44px;
   border-radius: 22px;
@@ -141,19 +141,28 @@ a {
   color: rgba(255, 255, 255, 0.55);
 }
 
+/* Optional subtag accent */
 .gdc-hero-subtag {
   color: #f0c96a;
 }
 
-/* Headline */
-.gdc-hero-body h1 {
+/* Title + subtitle */
+.gdc-hero-title h4 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.gdc-hero-title h1 {
   margin: 6px 0 14px;
   font-size: 40px;
   line-height: 1.05;
 }
 
 /* Body copy */
-.gdc-hero-body p {
+.gdc-hero-desc {
   margin: 0 0 32px;
   font-size: 15px;
   line-height: 1.6;
@@ -229,11 +238,8 @@ a {
   color: #f0c96a;
 }
 
-/* Optional styling for the "Industry classification" line if used as a span */
 .gdc-contact-foot {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
+  margin-top: 8px;
   color: rgba(255, 255, 255, 0.72);
 }
 
@@ -253,9 +259,18 @@ a {
    RESPONSIVE TWEAKS
    ======================== */
 
-@media (max-width: 1200px) {
+/* Tablet-ish */
+@media (max-width: 980px) {
+  .gdc-header {
+    padding: 14px 32px 6px;
+  }
+
   .gdc-nav-logo {
-    width: 280px;
+    width: 320px; /* TABLET KNOB */
+  }
+
+  .gdc-main {
+    padding: 16px 28px 80px;
   }
 }
 
@@ -266,35 +281,31 @@ a {
 
   .gdc-hero {
     flex-direction: column;
-    margin-top: 0;
+    gap: 32px;
+    margin-top: 8px;
   }
 
-  .gdc-nav-logo {
-    width: 220px;
-  }
-
-  /* Contact card: full-width but not bleeding */
   .gdc-contact-card {
     width: 100%;
     max-width: 360px;
     margin: 24px auto 0;
     box-sizing: border-box;
-    padding: 24px;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   /* Header cleanup */
   .gdc-header {
     height: auto;
-    padding: 4px 12px 0;
+    padding: 10px 16px 4px;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
-    row-gap: 2px;
+    align-items: center;
+    row-gap: 6px;
   }
 
-  /* On mobile, logo above nav and centered */
+  /* On mobile, logo sits above nav, centered */
   .gdc-nav-brand {
     position: static;
     margin-bottom: -4px;
@@ -302,26 +313,24 @@ a {
     justify-content: center;
   }
 
-  /* Logo scale on mobile */
+  /* Mobile logo scale (MOBILE KNOB) */
   .gdc-nav-logo {
-    width: 300px;   /* smaller than desktop so it doesn’t dominate */
+    width: 340px;
     height: auto;
-    margin-bottom: 2px;
   }
 
-  /* Nav: keep tight to logo */
   .gdc-nav-links {
-    gap: 12px;
+    gap: 18px;
     font-size: 14px;
   }
 
   /* Hero spacing tweak */
   .gdc-hero {
-    margin-top: 12px;
+    margin-top: 10px;
     padding: 24px 20px 28px;
   }
 
-  .gdc-hero-body h1 {
+  .gdc-hero-title h1 {
     font-size: 30px;
   }
 
