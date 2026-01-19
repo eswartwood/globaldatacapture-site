@@ -242,18 +242,16 @@ a {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ===============================
+/* ========================
    RESPONSIVE TWEAKS
-   =============================== */
+   ======================== */
 
-/* <= 1200px: moderate squeeze */
 @media (max-width: 1200px) {
   .gdc-nav-logo {
     width: 280px;
   }
 }
 
-/* <= 900px: tablet / small landscape phone */
 @media (max-width: 900px) {
   .gdc-main {
     padding: 16px 22px 80px;
@@ -268,46 +266,44 @@ a {
     width: 220px;
   }
 
+  /* Contact card: full-width but not bleeding */
   .gdc-contact-card {
     width: 100%;
     max-width: 360px;
-    margin: 24px auto;
-    padding: 24px;
+    margin: 24px auto 0;
     box-sizing: border-box;
+    padding: 24px;
   }
 }
 
-/* <= 768px: true mobile mode */
 @media (max-width: 768px) {
-  .gdc-main {
-    padding: 12px 16px 64px;
-  }
-
+  /* Stack logo + nav nicely, reduce gap */
   .gdc-header {
-    height: 72px;
-    padding: 8px 16px 0;
-    display: flex;
+    height: auto;
+    padding: 10px 16px 4px;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    row-gap: 4px;
   }
 
   .gdc-nav-brand {
-    top: 10px;
-    left: 12px;
+    position: static;   /* <-- this is what fixes the logo in the corner */
+    margin-bottom: 2px;
   }
 
   .gdc-nav-logo {
-    width: auto;
-    height: 56px;
+    width: 210px;
+    height: auto;
   }
 
   .gdc-nav-links {
     gap: 20px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .gdc-hero {
-    margin-top: 24px;
+    margin-top: 6px;
     padding: 24px 20px 28px;
   }
 
@@ -318,12 +314,5 @@ a {
   .gdc-feature-row {
     flex-direction: column;
   }
-
-  .gdc-contact-card {
-    width: 100%;
-    max-width: 360px;
-    margin: 24px auto 0;
-  }
 }
-
 
