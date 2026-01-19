@@ -195,6 +195,22 @@ a {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* space below tag row */
+.gdc-hero-tags {
+  margin-bottom: 10px;
+}
+
+/* space between h4 and big h1 */
+.gdc-hero-title h4 {
+  margin-bottom: 10px;
+}
+
+/* space below the big h1 */
+.gdc-hero-title h1 {
+  margin-bottom: 8px;
+}
+
+
 /* ===============================
    CONTACT CARD
    =============================== */
