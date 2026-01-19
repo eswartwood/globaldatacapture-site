@@ -405,8 +405,8 @@ a {
 
   /* top → logo */
   .gdc-nav-brand {
-    margin-top: -200px;   /* was 16px — tighter */
-    margin-bottom: -200px;
+    margin-top: -75px;   /* was 16px — tighter */
+    margin-bottom: -75px;
   }
 
   /* logo size (your chosen knob) */
