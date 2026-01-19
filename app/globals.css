@@ -374,7 +374,7 @@ a {
 
   /* scale logo on mobile */
   .gdc-nav-logo {
-    width: 750px;
+    width: 400px;
     height: auto;
     image-rendering: optimize-contrast;
   }
