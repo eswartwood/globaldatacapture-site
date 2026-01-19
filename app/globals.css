@@ -356,3 +356,73 @@ a {
     margin: 0 auto 14px;  /* centers logo but keeps text left-aligned */
   }
 }
+/* ==============================================
+   MOBILE GDC NAV LOGO FIX (max-width: 768px)
+   ============================================== */
+@media (max-width: 768px) {
+
+  /* move logo above nav + center */
+  .gdc-nav-brand {
+    position: static !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    z-index: 10;
+  }
+
+  /* scale logo on mobile */
+  .gdc-nav-logo {
+    width: 750px;
+    height: auto;
+    image-rendering: optimize-contrast;
+  }
+
+  /* nav sits under logo */
+  .gdc-nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  /* bump hero down to avoid overlap */
+  .gdc-hero {
+    margin-top: 4px;
+    padding-top: 12px;
+  }
+
+  /* CONTACT CARD stacked logo center fix */
+  .gdc-contact-card img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 768px) {
+
+  /* top → logo */
+  .gdc-nav-brand {
+    margin-top: -150px;   /* was 16px — tighter */
+    margin-bottom: -180px;
+  }
+
+  /* logo size (your chosen knob) */
+  .gdc-nav-logo {
+    width: 750px;
+    height: auto;
+  }
+
+  /* logo → nav */
+  .gdc-nav-links {
+    margin-top: 2px;   /* was 8–12px territory */
+    margin-bottom: 10px;
+  }
+
+  /* nav → hero */
+  .gdc-hero {
+    padding-top: 18px;   /* bump hero down slightly */
+  }
+}
