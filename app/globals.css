@@ -405,13 +405,13 @@ a {
 
   /* top → logo */
   .gdc-nav-brand {
-    margin-top: -100px;   /* was 16px — tighter */
-    margin-bottom: -100px;
+    margin-top: -125px;   /* was 16px — tighter */
+    margin-bottom: -125px;
   }
 
   /* logo size (your chosen knob) */
   .gdc-nav-logo {
-    width: 350px;
+    width: 550px;
     height: auto;
   }
 
