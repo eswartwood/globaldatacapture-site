@@ -1,182 +1,334 @@
-/* app/globals.css */
+/* =======================================
+   GLOBAL DESIGN SYSTEM — GDC BRANDING
+======================================= */
 
-/* ========== Base reset ========== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root {
+  --gdc-bg: #0d0f12;
+  --gdc-panel: #14171c;
+  --gdc-border: rgba(255, 225, 145, 0.28);
+  --gdc-muted: rgba(255, 255, 255, 0.64);
+  --gdc-text: rgba(255, 255, 255, 0.92);
+  --gdc-gold: rgb(240, 201, 106);
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
+  background: var(--gdc-bg);
+  color: var(--gdc-text);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f3f4f6; /* gray-100 */
-  color: #111827;      /* gray-900 */
-}
-
-/* We’ll style specific links ourselves */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ========== Page frame ========== */
+/* =======================
+   MAIN LAYOUT
+======================= */
 
-.gdc-page {
-  min-height: 100vh;
+.gdc-main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 16px 40px 100px;
+}
+
+/* =======================
+   HEADER / NAV
+======================= */
+
+.gdc-header {
+  position: relative;
+  height: 80px;
+  padding: 16px 48px 8px 0; /* added right padding for the nudge */
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 24px;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: var(--gdc-muted);
 }
 
-/* Card window */
-.gdc-window {
-  position: relative;
-  width: 100%;
-  max-width: 960px;
-  background: #f9fafb; /* slightly warmer than body */
-  border-radius: 32px;
-  box-shadow:
-    0 24px 60px rgba(15, 23, 42, 0.18),
-    0 0 0 1px rgba(148, 163, 184, 0.3);
-  padding: 48px 72px 40px;
-}
-
-/* ========== Nav (top right) ========== */
-
-.gdc-nav {
+/* Big logo, absolutely positioned, overlaps hero */
+.gdc-nav-brand {
   position: absolute;
-  top: 32px;
-  right: 48px;
+  top: 8px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+}
+
+.gdc-nav-logo {
+  width: 320px; /* main header logo size */
+  height: auto;
+  display: block;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  filter: brightness(1.12) saturate(1.14)
+    drop-shadow(0 0 20px rgba(240, 201, 106, 0.7));
+}
+
+/* Nav links on the right */
+.gdc-nav-links {
   display: flex;
   gap: 28px;
-  font-size: 15px;
-  font-weight: 500;
 }
 
-.gdc-nav-link {
-  color: #6b7280; /* gray-500 */
-  transition: color 0.2s ease;
+.gdc-nav-links a {
+  position: relative;
+  color: var(--gdc-muted);
+  padding: 4px 0;
+  letter-spacing: 0.08em;
 }
 
-.gdc-nav-link:hover,
-.gdc-nav-link:focus-visible {
-  color: #111827; /* gray-900 */
+.gdc-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--gdc-gold);
+  transition: width 0.2s ease-out;
 }
 
-/* ========== HERO: logo + service line ========== */
+.gdc-nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =======================
+   HERO AREA
+======================= */
 
 .gdc-hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  margin-top: 24px;
-  margin-bottom: 32px;
+  gap: 48px;
+  margin-top: -8px; /* pull hero up under the logo */
+  border: 1px solid var(--gdc-border);
+  padding: 44px;
+  border-radius: 22px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(240, 201, 106, 0.08),
+    transparent 60%
+  );
 }
 
-/* Desktop baseline logo size */
-.gdc-logo-main {
-  width: 420px;     /* strong presence on desktop */
-  max-width: 100%;
-  height: auto;
-  display: block;
+.gdc-hero-body {
+  flex: 1;
 }
 
-/* Service line */
-.gdc-tagline {
-  text-align: center;
-  font-size: 22px;
-  font-weight: 500;
-  color: #4b5563; /* gray-600 */
+/* Tag row */
+.gdc-hero-tags {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--gdc-muted);
 }
 
-/* ========== Divider ========== */
-
-.gdc-divider {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 24px 0;
+.gdc-hero-tags span:first-child::before {
+  content: "• ";
 }
 
-/* ========== Contact block ========== */
+/* Title & description */
+.gdc-hero-title h4 {
+  color: var(--gdc-gold);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
 
-.gdc-contact {
+.gdc-hero-title h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.28;
+  margin: 0 0 18px;
+}
+
+.gdc-hero-desc {
+  max-width: 760px;
   font-size: 16px;
-  line-height: 1.5;
-  color: #111827;
+  color: var(--gdc-muted);
+  margin-bottom: 28px;
 }
 
-.gdc-contact p {
+/* Feature cards */
+.gdc-feature-row {
+  display: flex;
+  gap: 18px;
+}
+
+.gdc-feature-card {
+  flex: 1;
+  border: 1px solid var(--gdc-border);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+  background: rgba(10, 12, 16, 0.8);
+}
+
+.gdc-feature-card h5 {
+  margin: 0 0 6px;
+  color: var(--gdc-gold);
+  font-weight: 600;
+}
+
+/* =======================
+   CONTACT CARD
+======================= */
+
+.gdc-contact-card {
+  width: 320px;
+  border: 1px solid var(--gdc-border);
+  border-radius: 20px;
+  padding: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 201, 106, 0.18),
+    transparent 60%
+  );
+}
+
+.gdc-contact-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 12px;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  filter: brightness(1.08) saturate(1.05);
+}
+
+.gdc-contact-block h6 {
   margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gdc-muted);
+  font-size: 13px;
 }
 
-.gdc-contact p:last-child {
-  margin-bottom: 0;
+.gdc-contact-block p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
 }
 
-/* Blue, underlined links for email + phone */
-.gdc-link {
-  color: #2563eb; /* blue-600 */
-  text-decoration: underline;
+.gdc-contact-block a {
+  color: var(--gdc-gold);
 }
 
-.gdc-link:hover,
-.gdc-link:focus-visible {
-  text-decoration: none;
+.gdc-contact-foot {
+  font-size: 12px;
+  opacity: 0.75;
 }
 
-/* ========== Responsive ========== */
+/* =======================
+   FOOTER
+======================= */
 
-/* Mobile / small tablet */
-@media (max-width: 768px) {
-  .gdc-page {
-    padding: 16px;
+.gdc-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding: 12px 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--gdc-muted);
+}
+
+/* =======================
+   RESPONSIVE TWEAKS
+======================= */
+
+@media (max-width: 1200px) {
+  .gdc-nav-logo {
+    width: 280px;
   }
+}
 
-  .gdc-window {
-    padding: 32px 20px 28px;
-    border-radius: 24px;
-  }
-
-  .gdc-nav {
-    top: 24px;
-    right: 24px;
-    gap: 20px;
-    font-size: 18px;
+@media (max-width: 900px) {
+  .gdc-main {
+    padding: 16px 22px 80px;
   }
 
   .gdc-hero {
-    align-items: flex-start;
-    gap: 24px;
-    margin-top: 40px;
-    margin-bottom: 24px;
+    flex-direction: column;
+    margin-top: 0;
   }
 
-  .gdc-logo-main {
-    width: 280px; /* bigger relative to the card on mobile */
+  .gdc-nav-logo {
+    width: 220px;
   }
 
-  .gdc-tagline {
-    font-size: 20px;
-    text-align: left;
-  }
-
-  .gdc-contact {
-    font-size: 16px;
+  .gdc-contact-card {
+    width: 100%;
+    max-width: 360px;
   }
 }
 
-/* Very wide desktop – give logo a bit more authority */
-@media (min-width: 1440px) {
-  .gdc-logo-main {
-    width: 460px;
+@media (max-width: 640px) {
+  .gdc-header {
+    height: auto;
+    padding-bottom: 16px;
+    justify-content: flex-start;
+  }
+
+  .gdc-nav-brand {
+    position: static;
+    margin-bottom: 8px;
+  }
+
+  .gdc-nav-logo {
+    width: 180px;
+  }
+
+  .gdc-nav-links {
+    margin-left: auto;
+  }
+
+  .gdc-hero {
+    margin-top: 0;
+    padding: 28px 18px;
+  }
+
+  .gdc-hero-title h1 {
+    font-size: 32px;
+  }
+
+  .gdc-feature-row {
+    flex-direction: column;
   }
 }
+/* FINAL GDC MASTHEAD TUNING */
+.gdc-nav-brand {
+  position: absolute;
+  top: 0;                    /* anchor to top of hero */
+  left: 0px;                /* adjust for taste */
+  transform: translateY(-32%); /* pull logo up */
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Masthead image refinement */
+.gdc-nav-brand img {
+  height: 300px;
+  width: auto;
+  filter: brightness(1.12)
+          saturate(1.1)
+          drop-shadow(0 4px 14px rgba(245, 205, 85, 0.4));
+  user-select: none;
+}
+
+
+
