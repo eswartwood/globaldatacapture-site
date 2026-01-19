@@ -62,7 +62,7 @@ a {
 /* Big transparent LLC logo – anchored left */
 .gdc-nav-brand {
   position: absolute;
-  top: 4px;
+  top: -85px;
   left: 32px;
   display: flex;
   align-items: center;
@@ -214,11 +214,12 @@ a {
 .gdc-contact-logo {
   width: 200px;
   height: auto;
-  margin-bottom: 12px;
   display: block;
+  margin: 0 auto 12px;   /* <-- center logo in the card */
   image-rendering: -webkit-optimize-contrast;
   filter: brightness(1.08) saturate(1.05);
 }
+
 
 .gdc-contact-block h6 {
   margin: 0 0 8px;
@@ -295,46 +296,63 @@ a {
 
 /* Mobile */
 @media (max-width: 768px) {
-  /* Header cleanup */
+  /* Header: stack logo above nav */
   .gdc-header {
     height: auto;
-    padding: 10px 16px 4px;
+    padding: 10px 16px 6px;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     row-gap: 6px;
   }
 
-  /* On mobile, logo sits above nav, centered */
+  /* On mobile, logo sits above nav and centered */
   .gdc-nav-brand {
     position: static;
-    margin-bottom: -4px;
+    margin-bottom: 4px;
     display: flex;
     justify-content: center;
   }
 
-  /* Mobile logo scale (MOBILE KNOB) */
+  /* Logo size on mobile (MOBILE KNOB) */
   .gdc-nav-logo {
-    width: 340px;
+    width: 320px;   /* <- turn this up/down until it feels perfect */
     height: auto;
   }
 
+  /* Nav links under the logo */
   .gdc-nav-links {
-    gap: 18px;
+    display: flex;
+    gap: 20px;
     font-size: 14px;
   }
 
-  /* Hero spacing tweak */
+  /* Hero: small bump down from header and slightly tighter padding */
   .gdc-hero {
     margin-top: 10px;
     padding: 24px 20px 28px;
+    flex-direction: column;
   }
 
-  .gdc-hero-title h1 {
+  .gdc-hero-body h1 {
     font-size: 30px;
   }
 
   .gdc-feature-row {
     flex-direction: column;
+  }
+
+  /* Contact card: full width on mobile */
+  .gdc-contact-card {
+    width: 100%;
+    max-width: 420px;
+    margin: 32px auto 0;
+    box-sizing: border-box;
+  }
+
+  /* Center the stacked logo inside the card on mobile */
+  .gdc-contact-logo {
+    display: block;
+    margin: 0 auto 14px;  /* centers logo but keeps text left-aligned */
   }
 }
