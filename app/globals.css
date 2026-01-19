@@ -1,34 +1,40 @@
-/* =======================================
-   GLOBAL DESIGN SYSTEM — GDC BRANDING
-======================================= */
+/* =========================================
+   GLOBAL DATA CAPTURE — GLOBAL STYLES
+   ========================================= */
 
-:root {
-  --gdc-bg: #0d0f12;
-  --gdc-panel: #14171c;
-  --gdc-border: rgba(255, 225, 145, 0.28);
-  --gdc-muted: rgba(255, 255, 255, 0.64);
-  --gdc-text: rgba(255, 255, 255, 0.92);
-  --gdc-gold: rgb(240, 201, 106);
+/* Base reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  padding: 0;
   margin: 0;
-  background: var(--gdc-bg);
-  color: var(--gdc-text);
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #24272f 0, #050608 55%);
+  color: #f8f8f8;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Links */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* =======================
-   MAIN LAYOUT
-======================= */
+/* Page shell */
+.gdc-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .gdc-main {
   max-width: 1500px;
@@ -36,24 +42,24 @@ a {
   padding: 16px 40px 100px;
 }
 
-/* =======================
+/* ===============================
    HEADER / NAV
-======================= */
+   =============================== */
 
 .gdc-header {
   position: relative;
-  height: 80px;
-  padding: 16px 48px 8px 0; /* added right padding for the nudge */
+  height: 80px; /* keeps nav stable */
+  padding: 16px 0 8px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.12em;
-  color: var(--gdc-muted);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* Big logo, absolutely positioned, overlaps hero */
+/* Big logo, absolutely positioned, overlaps hero slightly */
 .gdc-nav-brand {
   position: absolute;
   top: 8px;
@@ -63,14 +69,16 @@ a {
   z-index: 50;
 }
 
+/* Main header logo size */
 .gdc-nav-logo {
-  width: 320px; /* main header logo size */
+  width: 320px;
   height: auto;
   display: block;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
-  filter: brightness(1.12) saturate(1.14)
-    drop-shadow(0 0 20px rgba(240, 201, 106, 0.7));
+  filter: brightness(1.12) saturate(1.14);
+  /* soft drop shadow, no glow bloom */
+  drop-shadow: 0 0 20px rgba(240, 201, 106, 0.3);
 }
 
 /* Nav links on the right */
@@ -81,7 +89,7 @@ a {
 
 .gdc-nav-links a {
   position: relative;
-  color: var(--gdc-muted);
+  color: rgba(255, 255, 255, 0.7);
   padding: 4px 0;
   letter-spacing: 0.08em;
 }
@@ -93,7 +101,7 @@ a {
   bottom: -2px;
   width: 0;
   height: 1px;
-  background: var(--gdc-gold);
+  background: #f0c96a; /* gold underline */
   transition: width 0.2s ease-out;
 }
 
@@ -101,15 +109,15 @@ a {
   width: 100%;
 }
 
-/* =======================
+/* ===============================
    HERO AREA
-======================= */
+   =============================== */
 
 .gdc-hero {
   display: flex;
   gap: 48px;
   margin-top: -8px; /* pull hero up under the logo */
-  border: 1px solid var(--gdc-border);
+  border: 1px solid rgba(140, 140, 155, 0.6);
   padding: 44px;
   border-radius: 22px;
   background: radial-gradient(
@@ -126,69 +134,66 @@ a {
 /* Tag row */
 .gdc-hero-tags {
   display: flex;
-  gap: 14px;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  margin-bottom: 10px;
+  gap: 18px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gdc-muted);
+  color: rgba(255, 255, 255, 0.55);
 }
 
-.gdc-hero-tags span:first-child::before {
-  content: "• ";
+.gdc-hero-subtag {
+  color: #f0c96a;
 }
 
-/* Title & description */
-.gdc-hero-title h4 {
-  color: var(--gdc-gold);
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  margin: 0 0 12px;
-  text-transform: uppercase;
-}
-
-.gdc-hero-title h1 {
+/* Headline */
+.gdc-hero-body h1 {
+  margin: 6px 0 14px;
   font-size: 40px;
-  font-weight: 600;
-  line-height: 1.28;
-  margin: 0 0 18px;
+  line-height: 1.05;
 }
 
-.gdc-hero-desc {
-  max-width: 760px;
-  font-size: 16px;
-  color: var(--gdc-muted);
-  margin-bottom: 28px;
+/* Body copy */
+.gdc-hero-body p {
+  margin: 0 0 32px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
 }
 
-/* Feature cards */
+/* Feature row */
 .gdc-feature-row {
   display: flex;
-  gap: 18px;
+  gap: 24px;
 }
 
 .gdc-feature-card {
   flex: 1;
-  border: 1px solid var(--gdc-border);
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 14px;
-  background: rgba(10, 12, 16, 0.8);
+  border-radius: 18px;
+  border: 1px solid rgba(140, 140, 155, 0.8);
+  padding: 18px 18px 22px;
 }
 
 .gdc-feature-card h5 {
   margin: 0 0 6px;
-  color: var(--gdc-gold);
+  color: #f0c96a;
   font-weight: 600;
 }
 
-/* =======================
+.gdc-feature-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===============================
    CONTACT CARD
-======================= */
+   =============================== */
 
 .gdc-contact-card {
   width: 320px;
-  border: 1px solid var(--gdc-border);
+  border: 1px solid rgba(140, 140, 155, 0.8);
   border-radius: 20px;
   padding: 24px;
   background: linear-gradient(
@@ -211,48 +216,44 @@ a {
   margin: 0 0 8px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--gdc-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 13px;
 }
 
 .gdc-contact-block p {
-  margin: 0 0 10px;
-  font-size: 15px;
-  line-height: 1.45;
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .gdc-contact-block a {
-  color: var(--gdc-gold);
+  color: #f0c96a;
 }
 
-.gdc-contact-foot {
-  font-size: 12px;
-  opacity: 0.75;
-}
-
-/* =======================
+/* ===============================
    FOOTER
-======================= */
+   =============================== */
 
 .gdc-footer {
   text-align: center;
-  margin-top: 24px;
-  padding: 12px 0 12px;
-  font-size: 12px;
+  margin-top: 40px;
+  font-size: 13px;
   letter-spacing: 0.08em;
-  color: var(--gdc-muted);
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* =======================
+/* ===============================
    RESPONSIVE TWEAKS
-======================= */
+   =============================== */
 
+/* <= 1200px: moderate squeeze */
 @media (max-width: 1200px) {
   .gdc-nav-logo {
     width: 280px;
   }
 }
 
+/* <= 900px: tablet / small landscape phone */
 @media (max-width: 900px) {
   .gdc-main {
     padding: 16px 22px 80px;
@@ -270,121 +271,57 @@ a {
   .gdc-contact-card {
     width: 100%;
     max-width: 360px;
+    margin: 24px auto;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+}
+
+/* <= 768px: true mobile mode */
+@media (max-width: 768px) {
+  .gdc-main {
+    padding: 12px 16px 64px;
   }
 
-  .gdc-contact-card {
-  width: 100%;
-  max-width: 360px;
-  margin: 24px auto 0;
-  box-sizing: border-box;
-  padding: 24px;
-}
-
-}
-
-@media (max-width: 768px) {
-
   .gdc-header {
-    height: auto;
+    height: 72px;
     padding: 8px 16px 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    row-gap: 2px;
-  }
-
-  .gdc-nav-brand {
-    margin-bottom: 0;
-  }
-
-  .gdc-nav-logo {
-    width: 190px;  /* tighter scale */
-    height: auto;
-  }
-
-  .gdc-nav-links {
-    gap: 18px;
-    font-size: 12px;
-  }
-
-  .gdc-hero {
-    margin-top: 6px;
-  }
-}
-
-
-  .gdc-feature-row {
-    flex-direction: column;
-  }
-}
-/* FINAL GDC MASTHEAD TUNING */
-.gdc-nav-brand {
-  position: absolute;
-  top: 0;                    /* anchor to top of hero */
-  left: 0px;                /* adjust for taste */
-  transform: translateY(-32%); /* pull logo up */
-  display: flex;
-  align-items: center;
-  z-index: 20;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-}
-
-/* Masthead image refinement */
-.gdc-nav-brand img {
-  height: 300px;
-  width: auto;
-  filter: brightness(1.12)
-          saturate(1.1)
-          drop-shadow(0 4px 14px rgba(245, 205, 85, 0.4));
-  user-select: none;
-}
-
-/* ===========================
-   MOBILE TWEAKS (phones)
-   =========================== */
-@media (max-width: 768px) {
-  /* Header layout: stack logo above nav */
-  .gdc-header {
-    height: auto;
-    padding: 12px 16px 6px;
-    flex-direction: column;
-    align-items: flex-end;  /* keeps HOME / LEGAL right-aligned */
-    row-gap: 4px;
-  }
-
-  /* Logo: centered, no overlap with hero */
-  .gdc-nav-brand {
-    position: static;
-    width: 100%;
     display: flex;
-    justify-content: center;
-    transform: none;        /* remove translateY */
-    margin-bottom: 4px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .gdc-nav-brand {
+    top: 10px;
+    left: 12px;
   }
 
   .gdc-nav-logo {
-    width: 220px;           /* smaller on phones */
-    height: auto;
+    width: auto;
+    height: 56px;
   }
 
-  /* Nav links: a bit tighter on mobile */
   .gdc-nav-links {
     gap: 20px;
     font-size: 12px;
   }
 
-  /* Hero: no negative margin under the logo on mobile */
   .gdc-hero {
-    margin-top: 8px;        /* was -8px on desktop */
-    padding: 28px 20px;
+    margin-top: 24px;
+    padding: 24px 20px 28px;
   }
 
-  /* Contact card: full width on narrow phones */
+  .gdc-hero-body h1 {
+    font-size: 30px;
+  }
+
+  .gdc-feature-row {
+    flex-direction: column;
+  }
+
   .gdc-contact-card {
     width: 100%;
-    max-width: 420px;
+    max-width: 360px;
     margin: 24px auto 0;
   }
 }
