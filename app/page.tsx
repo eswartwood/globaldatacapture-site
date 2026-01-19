@@ -1,9 +1,9 @@
 export default function Page() {
   return (
     <main className="gdc-main">
-      {/* =======================
+      {/* ===============================
           HEADER / NAV
-      ======================= */}
+          =============================== */}
       <header className="gdc-header">
         {/* Big transparent LLC logo, floating over hero */}
         <a href="/" className="gdc-nav-brand">
@@ -20,10 +20,11 @@ export default function Page() {
         </nav>
       </header>
 
-      {/* =======================
+      {/* ===============================
           HERO CONTENT
-      ======================= */}
+          =============================== */}
       <section className="gdc-hero">
+        {/* Left side: copy + feature cards */}
         <div className="gdc-hero-body">
           {/* Tag row */}
           <div className="gdc-hero-tags">
@@ -43,8 +44,8 @@ export default function Page() {
               Global Data Capture, LLC is a systems engineering firm specializing in
               identity-driven data workflows, secure digital asset packaging, and
               enterprise-grade software integrations. We design and deploy smart file
-              formats, registration systems, and security-driven data tools used across
-              commercial, industrial, and media environments.
+              formats, registration systems, and security-driven data tools used
+              across commercial, industrial, and media environments.
             </p>
           </div>
 
@@ -76,8 +77,8 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Contact card */}
-        <div className="gdc-contact-card">
+        {/* Right side: contact card */}
+        <aside className="gdc-contact-card">
           <img
             src="/gdc/gdc-logo-gold-stacked-avatar.png"
             alt="Global Data Capture, LLC"
@@ -86,32 +87,28 @@ export default function Page() {
 
           <div className="gdc-contact-block">
             <h6>Contact</h6>
-            <p>
-              Global Data Capture, LLC
-              <br />
-              521 Fifth Avenue, 17th Floor
-              <br />
-              New York, NY 10175-0038
-            </p>
+            <p>Global Data Capture, LLC</p>
+            <p>521 Fifth Avenue, 17th Floor</p>
+            <p>New York, NY 10175-0038</p>
+
             <p>
               <a href="mailto:support@globaldatacapture.com">
                 support@globaldatacapture.com
               </a>
-              <br />
-              (888) 501-4099
             </p>
-            <span className="gdc-contact-foot">
-              Industry classification: Computer &amp; Network Security.
-            </span>
+            <p>(888) 501-4099</p>
+
+            <p>Industry classification: Computer &amp; Network Security.</p>
           </div>
-        </div>
+        </aside>
       </section>
 
-      {/* =======================
+      {/* ===============================
           FOOTER
-      ======================= */}
+          =============================== */}
       <footer className="gdc-footer">
-        © 2026 Global Data Capture, LLC — New York · New Jersey — All Rights Reserved.
+        © 2026 Global Data Capture, LLC — New York · New Jersey — All Rights
+        Reserved.
       </footer>
     </main>
   );

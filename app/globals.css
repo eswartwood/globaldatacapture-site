@@ -48,22 +48,22 @@ a {
 
 .gdc-header {
   position: relative;
-  height: 80px; /* keeps nav stable */
-  padding: 16px 0 8px;
+  height: 88px;                  /* a bit more room for the logo */
+  padding: 16px 56px 8px;        /* pulls nav in from the edges */
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-end;     /* nav on the right */
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Big logo, absolutely positioned, overlaps hero slightly */
+/* Big logo, absolutely positioned, overlaps hero slightly (desktop) */
 .gdc-nav-brand {
   position: absolute;
   top: 8px;
-  left: 0;
+  left: 0;                       /* sits against the header's left padding */
   display: flex;
   align-items: center;
   z-index: 50;
@@ -76,9 +76,8 @@ a {
   display: block;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
-  filter: brightness(1.12) saturate(1.14);
-  /* soft drop shadow, no glow bloom */
-  drop-shadow: 0 0 20px rgba(240, 201, 106, 0.3);
+  filter: brightness(1.12) saturate(1.14)
+    drop-shadow(0 0 20px rgba(240, 201, 106, 0.3));
 }
 
 /* Nav links on the right */
@@ -230,6 +229,14 @@ a {
   color: #f0c96a;
 }
 
+/* Optional styling for the "Industry classification" line if used as a span */
+.gdc-contact-foot {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 /* ===============================
    FOOTER
    =============================== */
@@ -277,33 +284,40 @@ a {
 }
 
 @media (max-width: 768px) {
-  /* Stack logo + nav nicely, reduce gap */
+  /* Header cleanup */
   .gdc-header {
     height: auto;
-    padding: 10px 16px 4px;
+    padding: 6px 12px 4px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    row-gap: 4px;
+    row-gap: 2px;
   }
 
+  /* On mobile, let logo sit above nav and center it */
   .gdc-nav-brand {
-    position: static;   /* <-- this is what fixes the logo in the corner */
+    position: static;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Logo scale boost on mobile */
+  .gdc-nav-logo {
+    width: 260px;
+    height: auto;
     margin-bottom: 2px;
   }
 
-  .gdc-nav-logo {
-    width: 210px;
-    height: auto;
-  }
-
+  /* Reduce nav gap so logo and nav feel glued */
   .gdc-nav-links {
-    gap: 20px;
-    font-size: 13px;
+    gap: 12px;
+    font-size: 14px;
   }
 
+  /* Hero spacing tweak */
   .gdc-hero {
-    margin-top: 6px;
+    margin-top: 12px;
     padding: 24px 20px 28px;
   }
 
@@ -315,4 +329,3 @@ a {
     flex-direction: column;
   }
 }
-
