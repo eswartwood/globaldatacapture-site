@@ -271,36 +271,47 @@ a {
     width: 100%;
     max-width: 360px;
   }
+
+  .gdc-contact-card {
+  width: 100%;
+  max-width: 360px;
+  margin: 24px auto 0;
+  box-sizing: border-box;
+  padding: 24px;
 }
 
-@media (max-width: 640px) {
+}
+
+@media (max-width: 768px) {
+
   .gdc-header {
     height: auto;
-    padding-bottom: 16px;
+    padding: 8px 16px 0;
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
+    row-gap: 2px;
   }
 
   .gdc-nav-brand {
-    position: static;
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
 
   .gdc-nav-logo {
-    width: 180px;
+    width: 190px;  /* tighter scale */
+    height: auto;
   }
 
   .gdc-nav-links {
-    margin-left: auto;
+    gap: 18px;
+    font-size: 12px;
   }
 
   .gdc-hero {
-    margin-top: 0;
-    padding: 28px 18px;
+    margin-top: 6px;
   }
+}
 
-  .gdc-hero-title h1 {
-    font-size: 32px;
-  }
 
   .gdc-feature-row {
     flex-direction: column;
