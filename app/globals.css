@@ -356,25 +356,25 @@ a {
     margin: 0 auto 14px;  /* centers logo but keeps text left-aligned */
   }
 }
-/* ==============================================
+/* ============================================
    MOBILE GDC NAV LOGO FIX (max-width: 768px)
-   ============================================== */
+   ============================================ */
 @media (max-width: 768px) {
 
   /* move logo above nav + center */
   .gdc-nav-brand {
-    position: static !important;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 16px;
-    margin-bottom: 6px;
-    z-index: 10;
+    margin-top: 16px;     /* top space knob */
+    margin-bottom: 4px;   /* space between logo + nav */
+    z-index: 5;           /* BELOW nav links */
   }
 
   /* scale logo on mobile */
   .gdc-nav-logo {
-    width: 400px;
+    width: 360px;         /* Sensei-picked size */
     height: auto;
     image-rendering: optimize-contrast;
   }
@@ -385,20 +385,14 @@ a {
     justify-content: center;
     gap: 22px;
     font-size: 16px;
-    margin-bottom: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;  /* space between nav + hero */
     position: relative;
-    z-index: 50;
+    z-index: 10;          /* ABOVE logo, always tappable */
   }
 
-  /* bump hero down to avoid overlap */
+  /* bump hero down a bit from nav */
   .gdc-hero {
-    margin-top: 4px;
-    padding-top: 12px;
-  }
-
-  
-  .gdc-nav-brand {
-    position: relative;
-    z-index: 10;
+    padding-top: 6px;
   }
 }
