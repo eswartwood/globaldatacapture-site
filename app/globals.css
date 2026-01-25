@@ -411,3 +411,84 @@ a {
     padding-top: 4px;    /* was 12px */
   }
 }
+/* ----------------------------------------
+   MOBILE TYPOGRAPHY: CENTER EVERYTHING
+   ------------------------------------- */ @media (max-width: 768px) {
+  /* Make main column-centered on small screens */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Constrain width of text blocks */
+  main > * {
+    max-width: 640px;
+    width: 100%;
+  }
+
+  /* Center all headings and paragraphs in the body */
+  main h1,
+  main h2,
+  main h3,
+  main h4,
+  main p {
+    text-align: center;
+  }
+
+  /* If you have any sections with their own wrappers,
+     this keeps them centered as well. */
+  main section,
+  .hero,
+  .section,
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* ----------------------------------------
+   MOBILE LAYOUT (<= 768px)
+   ------------------------------------- */
+@media (max-width: 768px) {
+  /* Main column spacing */
+  main {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Constrain width of sections and keep them centered */
+  main > * {
+    max-width: 640px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center body headings + paragraphs */
+  main h1,
+  main h2,
+  main h3,
+  main h4,
+  main p {
+    text-align: center;
+  }
+
+  /* Center category headers: IDENTITY SYSTEMS / DIGITAL ASSET SECURITY */
+  .category-nav,
+  .category-nav > *,
+  .category-nav a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .category-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+   }

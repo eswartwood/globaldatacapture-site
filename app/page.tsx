@@ -26,19 +26,32 @@ export default function Page() {
       <section className="gdc-hero">
         <div className="gdc-hero-body">
           {/* Tag row */}
-          <div className="gdc-hero-tags">
-            <span>Identity Systems</span>
-            <span>Digital Asset Security</span>
-          </div>
-          <br />
+<div
+  className="gdc-hero-tags"
+  style={{
+    display: "flex",
+    width: "100%",
+    justifyContent: "center",
+    textAlign: "center",
+    gap: "0.75rem",
+    flexWrap: "wrap",
+  }}
+>
+  <span>Identity Systems</span>
+  <span>Digital Asset Security</span>
+</div>
+<br />
+
 
           {/* Title & description */}
           <div className="gdc-hero-title">
   <h4>Software &amp; Systems Engineering</h4>
+  <br />
+
   <h1>
-    Identity-driven tools for securing
+    Identity-driven tools for securing data, assets, and workflows.
     <br />
-    data, assets, and workflows.
+
   </h1>
 </div>
 
