@@ -1,89 +1,81 @@
 // app/page.tsx
-
 export default function Page() {
   return (
     <section className="gdc-main">
       <div className="gdc-hero">
-        {/* Left: main content */}
+
+        {/* LEFT */}
         <div className="gdc-hero-body">
-          {/* Tag row – matches .gdc-hero-tags in CSS */}
+
           <div className="gdc-hero-tags">
-            <span>Identity Systems</span>
-            <span>Digital Asset Security</span>
+            <span>IDENTITY SYSTEMS</span>
+            <span>DIGITAL ASSET SECURITY</span>
           </div>
 
-          {/* Title & subtitle – wrapper matches .gdc-hero-title in CSS */}
-          <div className="gdc-hero-title">
-            <h4>Software &amp; Systems Engineering</h4>
+          <h4 className="gdc-hero-title">
+            SOFTWARE &amp; SYSTEMS ENGINEERING
+          </h4>
 
-            <h1>
-              Identity-driven tools for securing data, assets, and workflows.
-            </h1>
-          </div>
+          <h1>
+            Identity-driven tools for securing data,<br />
+            assets, and workflows.
+          </h1>
 
           <p className="gdc-hero-desc">
-            Global Data Capture, LLC is a systems engineering firm specializing
-            in identity-driven data workflows, secure digital asset packaging,
-            and enterprise-grade software integrations. We design and deploy
-            smart file formats, registration systems, and security-driven data
-            tools used across commercial, industrial, and media environments.
+            Global Data Capture, LLC is a systems engineering firm specializing in
+            identity-driven data workflows, secure digital asset packaging, and enterprise-grade
+            software integrations. We design and deploy smart file formats, registration systems,
+            and security-driven data tools used across commercial, industrial, and media environments.
           </p>
 
-          {/* Feature cards */}
-          <div className="gdc-grid">
-            <article className="gdc-card">
-              <h3 className="gdc-card-title">Smart File Formats</h3>
-              <p className="gdc-card-body">
-                Structured containers for certificates, media, and metadata with
-                integrity and provenance built in.
+          <div className="gdc-feature-row">
+            <div className="gdc-feature-card">
+              <h5>Smart File Formats</h5>
+              <p>
+                Structured containers for certificates, media, and metadata with integrity and provenance built in.
               </p>
-            </article>
+            </div>
 
-            <article className="gdc-card">
-              <h3 className="gdc-card-title">Registration &amp; Identity</h3>
-              <p className="gdc-card-body">
-                Tools that tie real-world entities to digital assets with
-                verifiable, auditable records.
+            <div className="gdc-feature-card">
+              <h5>Registration &amp; Identity</h5>
+              <p>
+                Tools that tie real-world entities to digital assets with verifiable, auditable records.
               </p>
-            </article>
+            </div>
 
-            <article className="gdc-card">
-              <h3 className="gdc-card-title">Enterprise Integration</h3>
-              <p className="gdc-card-body">
-                Software integrations that plug into existing workflows, cloud
-                platforms, and identity providers.
+            <div className="gdc-feature-card">
+              <h5>Enterprise Integration</h5>
+              <p>
+                Software integrations that plug into existing workflows, cloud platforms, and identity providers.
               </p>
-            </article>
+            </div>
           </div>
+
         </div>
 
-        {/* Right: contact card */}
+        {/* RIGHT — CONTACT */}
         <aside className="gdc-contact-card">
-          <div className="gdc-contact-body">
-            <h2 className="gdc-contact-title">Contact</h2>
-
-            <p className="gdc-contact-line">
-              Global Data Capture, LLC
-              <br />
-              521 Fifth Avenue, 17th Floor
-              <br />
+          <img src="/gdc/gdc-gold-logo.png" className="gdc-contact-logo" alt="GDC" />
+          <div className="gdc-contact-block">
+            <h6>Contact</h6>
+            <p>
+              Global Data Capture, LLC<br />
+              521 Fifth Avenue, 17th Floor<br />
               New York, NY 10175-0038
             </p>
-
-            <p className="gdc-contact-line">
+            <p>
               <a href="mailto:support@globaldatacapture.com">
                 support@globaldatacapture.com
-              </a>
-              <br />
+              </a><br />
               (888) 501-4099
             </p>
-
             <p className="gdc-contact-foot">
               Industry classification: Computer &amp; Network Security.
             </p>
           </div>
         </aside>
+
       </div>
     </section>
-  );
+  )
 }

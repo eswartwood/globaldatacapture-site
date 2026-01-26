@@ -1,7 +1,6 @@
 // app/layout.tsx
-import './globals.css';
-import type { Metadata } from 'next';
-import React from 'react';
+import './globals.css'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Global Data Capture, LLC — Identity-Driven Digital Asset Security',
@@ -21,8 +20,6 @@ export const metadata: Metadata = {
     description:
       'Identity-driven tools for securing data, assets, and workflows.',
   },
-
-  // Favicons + PWA icons
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon' },
@@ -40,57 +37,32 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   themeColor: '#000000',
-  other: {
-    'msapplication-TileColor': '#000000',
-  },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="gdc-shell">
-          {/* HEADER / NAV */}
-          <header className="gdc-header">
-            <div className="gdc-nav-brand">
-              <img
-                src="/window.svg"
-                alt="Global Data Capture, LLC"
-                className="gdc-nav-logo"
-              />
-            </div>
+      <body className="gdc-shell">
+        <header className="gdc-header">
+          <div className="gdc-nav-brand">
+            <img src="/gdc/gdc-gold-logo.png" className="gdc-nav-logo" alt="Global Data Capture, LLC" />
+          </div>
+          <nav className="gdc-nav-links">
+            <a href="/">HOME</a>
+            <a href="/legal">LEGAL</a>
+          </nav>
+        </header>
 
-            <nav className="gdc-nav-links">
-              <a href="/">Home</a>
-              <a href="/legal">Legal</a>
-            </nav>
-          </header>
+        <main>{children}</main>
 
-          {/* MAIN CONTENT */}
-          <main>{children}</main>
-
-          {/* GLOBAL FOOTER / COMPLIANCE BAR */}
-          <footer className="gdc-footer">
-            <div>
-              © 2026 Global Data Capture, LLC — New York, New Jersey — All
-              Rights Reserved.
-            </div>
-            <div className="gdc-footer-links">
-              <a href="/legal">Legal &amp; Compliance</a>
-              <span>•</span>
-              <a href="mailto:support@globaldatacapture.com">
-                support@globaldatacapture.com
-              </a>
-              <span>•</span>
-              <span>(888) 501-4099</span>
-            </div>
-          </footer>
-        </div>
+        <footer className="gdc-footer">
+          © 2026 Global Data Capture, LLC — New York, New Jersey — All Rights Reserved.
+        </footer>
       </body>
     </html>
-  );
+  )
 }
