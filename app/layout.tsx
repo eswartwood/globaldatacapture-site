@@ -21,27 +21,30 @@ export const metadata: Metadata = {
     description:
       'Identity-driven tools for securing data, assets, and workflows.',
   },
-  // FAVICONS / PWA ICONS
-icons: {
-  icon: [
-    { url: '/favicon.ico', sizes: 'any' },
-    { url: '/icon-16.png', type: 'image/png', sizes: '16x16' },
-    { url: '/icon-32.png', type: 'image/png', sizes: '32x32' },
-    { url: '/icon-64.png', type: 'image/png', sizes: '64x64' },
-    { url: '/icon-128.png', type: 'image/png', sizes: '128x128' },
-    { url: '/icon-180.png', type: 'image/png', sizes: '180x180' },
-    { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
-    { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
-  ],
-  apple: [
-    { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-  ],
-},
-manifest: '/site.webmanifest',
-themeColor: '#000000',
-other: {
-  'msapplication-TileColor': '#000000',
-},
+
+  // Favicons + PWA icons
+  icons: {
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-64.png', sizes: '64x64', type: 'image/png' },
+      { url: '/icon-128.png', sizes: '128x128', type: 'image/png' },
+      { url: '/icon-180.png', sizes: '180x180', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+
+  manifest: '/site.webmanifest',
+  themeColor: '#000000',
+  other: {
+    'msapplication-TileColor': '#000000',
+  },
+};
 
 export default function RootLayout({
   children,
