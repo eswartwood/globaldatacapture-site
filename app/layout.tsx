@@ -52,7 +52,45 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="gdc-shell">
+          {/* HEADER / NAV */}
+          <header className="gdc-header">
+            <div className="gdc-nav-brand">
+              <img
+                src="/window.svg"
+                alt="Global Data Capture, LLC"
+                className="gdc-nav-logo"
+              />
+            </div>
+
+            <nav className="gdc-nav-links">
+              <a href="/">Home</a>
+              <a href="/legal">Legal</a>
+            </nav>
+          </header>
+
+          {/* MAIN CONTENT */}
+          <main>{children}</main>
+
+          {/* GLOBAL FOOTER / COMPLIANCE BAR */}
+          <footer className="gdc-footer">
+            <div>
+              © 2026 Global Data Capture, LLC — New York, New Jersey — All
+              Rights Reserved.
+            </div>
+            <div className="gdc-footer-links">
+              <a href="/legal">Legal &amp; Compliance</a>
+              <span>•</span>
+              <a href="mailto:support@globaldatacapture.com">
+                support@globaldatacapture.com
+              </a>
+              <span>•</span>
+              <span>(888) 501-4099</span>
+            </div>
+          </footer>
+        </div>
+      </body>
     </html>
   );
 }
