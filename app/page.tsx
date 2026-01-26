@@ -4,22 +4,22 @@ export default function Page() {
   return (
     <section className="gdc-main">
       <div className="gdc-hero">
-
         {/* Left: main content */}
         <div className="gdc-hero-body">
-
-          {/* Tag row */}
-          <div className="gdc-tag-row">
+          {/* Tag row – matches .gdc-hero-tags in CSS */}
+          <div className="gdc-hero-tags">
             <span>Identity Systems</span>
             <span>Digital Asset Security</span>
           </div>
 
-          {/* Title & subtitle */}
-          <h4 className="gdc-hero-title">Software &amp; Systems Engineering</h4>
+          {/* Title & subtitle – wrapper matches .gdc-hero-title in CSS */}
+          <div className="gdc-hero-title">
+            <h4>Software &amp; Systems Engineering</h4>
 
-          <h1>
-            Identity-driven tools for securing data, assets, and workflows.
-          </h1>
+            <h1>
+              Identity-driven tools for securing data, assets, and workflows.
+            </h1>
+          </div>
 
           <p className="gdc-hero-desc">
             Global Data Capture, LLC is a systems engineering firm specializing
