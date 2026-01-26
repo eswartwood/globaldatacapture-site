@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Global Data Capture, LLC',
   },
 
-  // Global meta description (kept ~160 chars)
+  // Global meta description
   description:
     'Global Data Capture, LLC is a systems engineering firm delivering identity-driven data workflows, secure digital asset packaging, and enterprise-grade software integrations.',
 
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 
-  // FAVICONS / PWA ICONS (from A2)
+  // FAVICONS / PWA ICONS
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon' },
@@ -76,7 +76,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="gdc-shell">
+          <main>{children}</main>
+
+          <footer className="gdc-footer">
+            <p>
+              © 2026 Global Data Capture, LLC — New York, New Jersey — All
+              rights reserved.
+            </p>
+            <p className="gdc-footer-links">
+              <a href="/legal">Legal &amp; Compliance</a>
+              <span>•</span>
+              <a href="mailto:support@globaldatacapture.com">
+                support@globaldatacapture.com
+              </a>
+              <span>•</span>
+              <span>(888) 501-4099</span>
+            </p>
+          </footer>
+        </div>
+      </body>
     </html>
   );
 }

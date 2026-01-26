@@ -492,3 +492,43 @@ a {
   }
 }
    }
+
+   /* ================================
+   Global footer / compliance bar
+   ================================ */
+
+.gdc-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gdc-shell main {
+  flex: 1;
+}
+
+.gdc-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.3); /* slate-400-ish */
+  padding: 1.5rem 1.25rem 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #9ca3af; /* light grey, stays in the background */
+}
+
+.gdc-footer a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.gdc-footer a:hover {
+  text-decoration: underline;
+}
+
+.gdc-footer-links {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
