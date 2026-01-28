@@ -1,68 +1,53 @@
-// app/layout.tsx
-import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Global Data Capture, LLC — Identity-Driven Digital Asset Security',
-  description:
-    'Global Data Capture, LLC is a systems engineering firm specializing in identity-driven data workflows, secure digital asset packaging, and enterprise-grade software integrations.',
-  openGraph: {
-    title: 'Global Data Capture, LLC — Identity-Driven Digital Asset Security',
-    description:
-      'Identity-driven tools for securing data, assets, and workflows across commercial, industrial, and media environments.',
-    url: 'https://globaldatacapture.com',
-    siteName: 'Global Data Capture, LLC',
-    type: 'website',
+  metadataBase: new URL("https://globaldatacapture.com"),
+  applicationName: "Global Data Capture, LLC",
+  title: {
+    default: "Global Data Capture, LLC",
+    template: "%s — Global Data Capture, LLC",
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Global Data Capture, LLC — Identity-Driven Digital Asset Security',
-    description:
-      'Identity-driven tools for securing data, assets, and workflows.',
+  description:
+    "Systems engineering firm specializing in identity-driven data workflows, secure digital asset packaging, and enterprise-grade software integrations.",
+  robots: { index: true, follow: true },
+  alternates: { canonical: "https://globaldatacapture.com" },
+  openGraph: {
+    type: "website",
+    url: "https://globaldatacapture.com",
+    siteName: "Global Data Capture, LLC",
+    title: "Global Data Capture, LLC",
+    description: "Identity-driven tools for securing data, assets, and workflows.",
+    images: [
+      {
+        url: "/gdc/gdc-gold-linked-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Global Data Capture, LLC",
+      },
+    ],
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' },
-      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon-64.png', sizes: '64x64', type: 'image/png' },
-      { url: '/icon-128.png', sizes: '128x128', type: 'image/png' },
-      { url: '/icon-180.png', sizes: '180x180', type: 'image/png' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: '/site.webmanifest',
-  themeColor: '#000000',
-}
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b0f14",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className="gdc-shell">
-        <header className="gdc-header">
-          <div className="gdc-nav-brand">
-            <img src="/gdc/gdc-gold-logo.png" className="gdc-nav-logo" alt="Global Data Capture, LLC" />
-          </div>
-          <nav className="gdc-nav-links">
-            <a href="/">HOME</a>
-            <a href="/legal">LEGAL</a>
-          </nav>
-        </header>
-
-        <main>{children}</main>
-
-        <footer className="gdc-footer">
-          © 2026 Global Data Capture, LLC — New York, New Jersey — All Rights Reserved.
-        </footer>
-      </body>
+      <body>{children}</body>
     </html>
-  )
+  );
 }

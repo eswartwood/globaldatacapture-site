@@ -1,13 +1,14 @@
 // app/robots.ts
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = "https://globaldatacapture.com";
+
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
-    sitemap: 'https://globaldatacapture.com/sitemap.xml',
-    host: 'https://globaldatacapture.com',
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

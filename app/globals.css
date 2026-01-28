@@ -1,8 +1,7 @@
-/* =========================================
-   GLOBAL DATA CAPTURE — GLOBAL STYLES
-   ========================================= */
+/* app/globals.css */
 
 /* Base reset-ish */
+
 *,
 *::before,
 *::after {
@@ -13,522 +12,363 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #303245 0, #080910 55%, #050609 100%);
+  color: #f5f5f7;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #24272f 0, #050608 55%);
-  color: #f8f8f8;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Links */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Page shell */
-.gdc-page {
   min-height: 100vh;
+}
+
+/* Overall shell */
+
+.gdc-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 40px;
   display: flex;
   flex-direction: column;
+  gap: 32px;
 }
 
-.gdc-main {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 16px 40px 100px;
-}
-
-/* ===============================
-   HEADER / NAV
-   =============================== */
+/* HEADER */
 
 .gdc-header {
-  position: relative;
-  height: 92px;
-  padding: 18px 64px 6px;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* nav on the right */
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Big transparent LLC logo – anchored left */
-.gdc-nav-brand {
-  position: absolute;
-  top: -85px;
-  left: 32px;
-  display: flex;
-  align-items: center;
-  z-index: 50;
-}
-
-/* Main header logo size (DESKTOP KNOB) */
-.gdc-nav-logo {
-  width: 380px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  image-rendering: -webkit-optimize-contrast;
-  filter: brightness(1.12) saturate(1.14);
-}
-
-/* Nav links on the right */
-.gdc-nav-links {
-  display: flex;
-  gap: 32px;
-  padding-right: 16px;
-}
-
-.gdc-nav-links a {
-  position: relative;
-  color: rgba(255, 255, 255, 0.74);
-  padding: 4px 0;
-  letter-spacing: 0.08em;
-}
-
-.gdc-nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: #f0c96a; /* gold underline */
-  transition: width 0.25s ease;
-}
-
-.gdc-nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ===============================
-   HERO AREA
-   =============================== */
-
-.gdc-hero {
-  display: flex;
-  gap: 48px;
-  margin-top: -6px; /* pull hero up under logo on desktop */
-  border: 1px solid rgba(140, 140, 155, 0.6);
-  padding: 44px;
-  border-radius: 22px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(240, 201, 106, 0.08),
-    transparent 60%
-  );
-}
-
-.gdc-hero-body {
-  flex: 1;
-}
-
-/* Tag row */
-.gdc-hero-tags {
-  display: flex;
-  gap: 18px;
-  margin-bottom: 8px;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* Optional subtag accent */
-.gdc-hero-subtag {
-  color: #f0c96a;
-}
-
-/* Title + subtitle */
-.gdc-hero-title h4 {
-  margin: 0 0 4px;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.gdc-hero-title h1 {
-  margin: 6px 0 14px;
-  font-size: 40px;
-  line-height: 1.05;
-}
-
-/* Body copy */
-.gdc-hero-desc {
-  margin: 0 0 32px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-/* Feature row */
-.gdc-feature-row {
-  display: flex;
+  justify-content: space-between;
   gap: 24px;
 }
 
-.gdc-feature-card {
-  flex: 1;
-  border-radius: 18px;
-  border: 1px solid rgba(140, 140, 155, 0.8);
-  padding: 18px 18px 22px;
+.gdc-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.gdc-feature-card h5 {
+.gdc-brand-mark {
+  display: block;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+
+.gdc-brand-wordmark {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f5f5f7;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+/* NAV */
+
+.gdc-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.gdc-nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #d0d3dd;
+  padding-bottom: 4px;
+}
+
+.gdc-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #f5f5f7;
+  transition: width 0.18s ease-out;
+}
+
+.gdc-nav-link:hover::after {
+  width: 100%;
+}
+
+.gdc-nav-link-active {
+  color: #ffffff;
+}
+
+.gdc-nav-link-active::after {
+  width: 100%;
+}
+
+/* MAIN ROW: hero + contact */
+
+.gdc-main-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* HERO CARD */
+
+.gdc-hero-card {
+  background: linear-gradient(145deg, #191b26, #202330);
+  border-radius: 24px;
+  padding: 28px 28px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Eyebrow row */
+
+.gdc-hero-eyebrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gdc-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f5f5f7;
+  background: radial-gradient(circle at top left, #3c4155 0, #202331 60%, #161824 100%);
+}
+
+.gdc-hero-kicker {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #d0d3dd;
+}
+
+/* Heading + body */
+
+.gdc-hero-heading {
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.gdc-hero-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #d5d8e3;
+}
+
+/* Feature row */
+
+.gdc-feature-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gdc-feature-card {
+  background: radial-gradient(circle at top left, #242837 0, #181a25 65%, #141621 100%);
+  border-radius: 16px;
+  padding: 14px 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gdc-feature-card h3 {
   margin: 0 0 6px;
-  color: #f0c96a;
-  font-weight: 600;
+  font-size: 13px;
 }
 
 .gdc-feature-card p {
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
+  color: #c7cada;
 }
 
-/* space below tag row */
-.gdc-hero-tags {
-  margin-bottom: 10px;
-}
-
-/* space between h4 and big h1 */
-.gdc-hero-title h4 {
-  margin-bottom: 10px;
-}
-
-/* space below the big h1 */
-.gdc-hero-title h1 {
-  margin-bottom: 8px;
-}
-
-
-/* ===============================
-   CONTACT CARD
-   =============================== */
+/* CONTACT CARD */
 
 .gdc-contact-card {
-  width: 320px;
-  border: 1px solid rgba(140, 140, 155, 0.8);
-  border-radius: 20px;
-  padding: 24px;
-  background: linear-gradient(
-    135deg,
-    rgba(240, 201, 106, 0.18),
-    transparent 60%
-  );
+  background: linear-gradient(160deg, #1b1d27, #101118);
+  border-radius: 24px;
+  padding: 24px 22px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.gdc-contact-logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
 }
 
 .gdc-contact-logo {
-  width: 200px;
-  height: auto;
   display: block;
-  margin: 0 auto 12px;   /* <-- center logo in the card */
-  image-rendering: -webkit-optimize-contrast;
-  filter: brightness(1.08) saturate(1.05);
 }
 
-
-.gdc-contact-block h6 {
-  margin: 0 0 8px;
+.gdc-contact-heading {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
+  color: #d0d3dd;
 }
 
-.gdc-contact-block p {
-  margin: 0 0 6px;
-  font-size: 14px;
-  line-height: 1.5;
+.gdc-contact-block {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .gdc-contact-block a {
-  color: #f0c96a;
-}
-
-.gdc-contact-foot {
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-/* ===============================
-   FOOTER
-   =============================== */
-
-.gdc-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* ========================
-   RESPONSIVE TWEAKS
-   ======================== */
-
-/* Tablet-ish */
-@media (max-width: 980px) {
-  .gdc-header {
-    padding: 14px 32px 6px;
-  }
-
-  .gdc-nav-logo {
-    width: 320px; /* TABLET KNOB */
-  }
-
-  .gdc-main {
-    padding: 16px 28px 80px;
-  }
-}
-
-@media (max-width: 900px) {
-  .gdc-main {
-    padding: 16px 22px 80px;
-  }
-
-  .gdc-hero {
-    flex-direction: column;
-    gap: 32px;
-    margin-top: 8px;
-  }
-
-  .gdc-contact-card {
-    width: 100%;
-    max-width: 360px;
-    margin: 24px auto 0;
-    box-sizing: border-box;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  /* Header: stack logo above nav */
-  .gdc-header {
-    height: auto;
-    padding: 10px 16px 6px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    row-gap: 6px;
-  }
-
-  /* On mobile, logo sits above nav and centered */
-  .gdc-nav-brand {
-    position: static;
-    margin-bottom: 4px;
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Logo size on mobile (MOBILE KNOB) */
-  .gdc-nav-logo {
-    width: 320px;   /* <- turn this up/down until it feels perfect */
-    height: auto;
-  }
-
-  /* Nav links under the logo */
-  .gdc-nav-links {
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-  }
-
-  /* Hero: small bump down from header and slightly tighter padding */
-  .gdc-hero {
-    margin-top: 10px;
-    padding: 24px 20px 28px;
-    flex-direction: column;
-  }
-
-  .gdc-hero-body h1 {
-    font-size: 30px;
-  }
-
-  .gdc-feature-row {
-    flex-direction: column;
-  }
-
-  /* Contact card: full width on mobile */
-  .gdc-contact-card {
-    width: 100%;
-    max-width: 420px;
-    margin: 32px auto 0;
-    box-sizing: border-box;
-  }
-
-  /* Center the stacked logo inside the card on mobile */
-  .gdc-contact-logo {
-    display: block;
-    margin: 0 auto 14px;  /* centers logo but keeps text left-aligned */
-  }
-}
-/* ================================================
-   MOBILE GDC NAV LOGO FIX (max-width: 768px)
-   ================================================ */
-@media (max-width: 768px) {
-  /* logo container: centered, tighter spacing */
-  .gdc-nav-brand {
-    position: static !important;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: -75px;   /* was 16px – less space above logo */
-    margin-bottom: -75px; /* was 6px – logo closer to nav */
-    z-index: 10;
-  }
-
-  /* logo size on mobile */
-  .gdc-nav-logo {
-    width: 400px;      /* your chosen knob */
-    height: auto;
-    image-rendering: optimize-contrast;
-  }
-
-  /* nav sits under logo, above hero */
-  .gdc-nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    font-size: 16px;
-    margin-bottom: 4px;  /* was 18px – hero comes up closer */
-    position: relative;
-    z-index: 50;         /* nav stays on top, taps safe */
-  }
-
-  /* hero card: slightly tighter to nav */
-  .gdc-hero {
-    margin-top: 0;       /* was 4px */
-    padding-top: 4px;    /* was 12px */
-  }
-}
-/* ----------------------------------------
-   MOBILE TYPOGRAPHY: CENTER EVERYTHING
-   ------------------------------------- */ @media (max-width: 768px) {
-  /* Make main column-centered on small screens */
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  /* Constrain width of text blocks */
-  main > * {
-    max-width: 640px;
-    width: 100%;
-  }
-
-  /* Center all headings and paragraphs in the body */
-  main h1,
-  main h2,
-  main h3,
-  main h4,
-  main p {
-    text-align: center;
-  }
-
-  /* If you have any sections with their own wrappers,
-     this keeps them centered as well. */
-  main section,
-  .hero,
-  .section,
-  .content {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-  /* ----------------------------------------
-   MOBILE LAYOUT (<= 768px)
-   ------------------------------------- */
-@media (max-width: 768px) {
-  /* Main column spacing */
-  main {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  /* Constrain width of sections and keep them centered */
-  main > * {
-    max-width: 640px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Center body headings + paragraphs */
-  main h1,
-  main h2,
-  main h3,
-  main h4,
-  main p {
-    text-align: center;
-  }
-
-  /* Center category headers: IDENTITY SYSTEMS / DIGITAL ASSET SECURITY */
-  .category-nav,
-  .category-nav > *,
-  .category-nav a {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .category-nav {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-}
-   }
-
-   /* ================================
-   Global footer / compliance bar
-   ================================ */
-
-.gdc-shell {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.gdc-shell main {
-  flex: 1;
-}
-
-.gdc-footer {
-  border-top: 1px solid rgba(148, 163, 184, 0.3); /* slate-400-ish */
-  padding: 1.5rem 1.25rem 2rem;
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: #9ca3af; /* light grey, stays in the background */
-}
-
-.gdc-footer a {
-  color: #e5e7eb;
+  color: #ffd86a;
   text-decoration: none;
 }
 
-.gdc-footer a:hover {
+.gdc-contact-block a:hover {
   text-decoration: underline;
 }
 
-.gdc-footer-links {
-  margin-top: 0.25rem;
+.gdc-contact-meta {
+  font-size: 11px;
+  color: #babdcb;
+}
+
+/* FOOTER */
+
+.gdc-footer {
+  margin-top: 4px;
+  padding-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a5a8b7;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 960px) {
+  .gdc-shell {
+    padding: 24px 16px 32px;
+  }
+
+  .gdc-main-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gdc-contact-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .gdc-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .gdc-brand-wordmark {
+    font-size: 12px;
+  }
+
+  .gdc-nav {
+    gap: 16px;
+    font-size: 11px;
+  }
+
+  .gdc-hero-heading {
+    font-size: 26px;
+  }
+
+  .gdc-feature-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* === Header brand + nav (safe add-on) === */
+.gdc-header {
+  width: 100%;
+}
+
+.gdc-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 28px 10px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.gdc-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.gdc-brand-logo {
+  height: 28px;   /* header height control */
+  width: auto;
+  display: block;
+}
+
+.gdc-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.gdc-nav-link {
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.gdc-footer {
+  width: 100%;
+}
+
+.gdc-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px 26px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .gdc-header-inner {
+    padding: 18px 18px 10px;
+  }
+  .gdc-brand-logo {
+    height: 24px;
+  }
+  .gdc-nav {
+    gap: 16px;
+  }
 }
