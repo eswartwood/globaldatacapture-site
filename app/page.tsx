@@ -1,47 +1,32 @@
-// app/page.tsx
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
   return (
     <main className="gdc-shell">
-      {/* HEADER */}
       <header className="gdc-header">
-        <div className="gdc-brand">
-          <Image
-            src="/gdc/gdc-mark-gold.png"
-            alt="Global Data Capture, LLC mark"
-            width={75}
-            height={75}
-            className="gdc-brand-mark"
-          />
-          <span className="gdc-brand-wordmark">GLOBAL DATA CAPTURE, LLC</span>
-        </div>
-
-        <nav className="gdc-nav">
-          <a href="/" className="gdc-nav-link gdc-nav-link-active">
+        <Link className="gdc-brand" href="/" aria-label="Global Data Capture home">
+          <span className="gdc-brand-wordmark">GLOBAL DATA CAPTURE<sup>®</sup></span>
+        </Link>
+        <nav className="gdc-nav" aria-label="Main navigation">
+          <Link href="/" className="gdc-nav-link gdc-nav-link-active" aria-current="page">
             HOME
-          </a>
-          <a href="/legal" className="gdc-nav-link">
+          </Link>
+          <Link href="/legal" className="gdc-nav-link">
             LEGAL
-          </a>
+          </Link>
         </nav>
       </header>
 
-      {/* HERO + CONTACT ROW */}
-      <section className="gdc-main-row">
-        {/* LEFT: HERO PANEL */}
-        <section className="gdc-hero-card" aria-label="Global Data Capture overview">
+      <section className="gdc-home" aria-labelledby="gdc-home-heading">
+        <div className="gdc-home-primary">
           <div className="gdc-hero-eyebrow-row">
             <span className="gdc-pill">IDENTITY SYSTEMS</span>
             <span className="gdc-pill">DIGITAL ASSET SECURITY</span>
           </div>
-
           <p className="gdc-hero-kicker">SOFTWARE &amp; SYSTEMS ENGINEERING</p>
-
-          <h1 className="gdc-hero-heading">
+          <h1 className="gdc-hero-heading" id="gdc-home-heading">
             Identity-driven tools for securing data, assets, and workflows.
           </h1>
-
           <p className="gdc-hero-body">
             Global Data Capture, LLC is a systems engineering firm specializing in
             identity-driven data workflows, secure digital asset packaging, and
@@ -52,48 +37,31 @@ export default function Page() {
 
           <div className="gdc-feature-row">
             <article className="gdc-feature-card">
-              <h3>Smart File Formats</h3>
+              <h2>Smart File Formats</h2>
               <p>
                 Structured containers for certificates, media, and metadata with
                 integrity and provenance built in.
               </p>
             </article>
-
             <article className="gdc-feature-card">
-              <h3>Registration &amp; Identity</h3>
+              <h2>Registration &amp; Identity</h2>
               <p>
                 Tools that tie real-world entities to digital assets with verifiable,
                 auditable records.
               </p>
             </article>
-
             <article className="gdc-feature-card">
-              <h3>Enterprise Integration</h3>
+              <h2>Enterprise Integration</h2>
               <p>
                 Software integrations that plug into existing workflows, cloud
                 platforms, and identity providers.
               </p>
             </article>
           </div>
-        </section>
+        </div>
 
-        {/* RIGHT: CONTACT CARD */}
-        <aside
-          className="gdc-contact-card"
-          aria-label="Global Data Capture contact information"
-        >
-          <div className="gdc-contact-logo-wrap">
-            <Image
-              src="/gdc/gdc-logo-gold-stacked-avatar.png"
-              alt="Global Data Capture, LLC logo"
-              width={250}
-              height={250}
-              className="gdc-contact-logo"
-            />
-          </div>
-
-          <h4 className="gdc-contact-heading">CONTACT</h4>
-
+        <aside className="gdc-contact-card" aria-label="Contact information">
+          <h2 className="gdc-contact-heading">CONTACT</h2>
           <p className="gdc-contact-block">
             <strong>Global Data Capture, LLC</strong>
             <br />
@@ -101,24 +69,17 @@ export default function Page() {
             <br />
             New York, NY 10175-0038
           </p>
-
-          <p className="gdc-contact-block">
-            <a href="mailto:support@globaldatacapture.com">
-              support@globaldatacapture.com
-            </a>
-            <br />
-            <a href="tel:+18885014099">(888) 501-4099</a>
-          </p>
-
           <p className="gdc-contact-block gdc-contact-meta">
             Industry classification: Computer &amp; Network Security.
           </p>
         </aside>
       </section>
 
-      {/* FOOTER */}
       <footer className="gdc-footer">
-        © 2026 Global Data Capture, LLC — New York — New Jersey — All Rights Reserved.
+        <p>© 2026 Global Data Capture, LLC — New York — New Jersey — All Rights Reserved.</p>
+        <a href="mailto:support@globaldatacapture.com">
+          support@globaldatacapture.com
+        </a>
       </footer>
     </main>
   );
