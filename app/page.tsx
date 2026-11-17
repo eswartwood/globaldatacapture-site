@@ -14,6 +14,9 @@ export default function Page() {
           <Link href="/legal" className="gdc-nav-link">
             LEGAL
           </Link>
+          <a href="https://capture.globaldatacapture.com/office" className="gdc-nav-link gdc-nav-link-active">
+            GDC Capture Login
+          </a>
         </nav>
       </header>
 
